@@ -795,11 +795,9 @@ h6 {
 .hamburger-menu {
     background: transparent;
     border: 0;
-    padding: 0;
     cursor: pointer;
 }
 
-/* Align recipe SVG icons with their labels. */
 .recipe_actions button {
     display: inline-flex;
     align-items: center;
@@ -836,15 +834,35 @@ h6 {
     height: 1em;
 }
 
-/* Bonus instructions and ingredients */
-.instructions_bonus { width: min(var(--width-12col), 90%); margin: 80px auto 0; color: var(--color-light); }
-.bonus_headings, .bonus_columns { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); column-gap: 15%; }
-.bonus_headings { border-bottom: 1px solid var(--color-light); padding-bottom: 12px; }
-.bonus_headings .todays_recipes_headline { height: auto; margin-top: 0; border-bottom: 0; }
-.bonus_columns { margin-top: 42px; align-items: start; font-size: 14px; line-height: 1.9; }
-.bonus_steps, .bonus_ingredients { list-style: none; min-width: 0; }
-.bonus_steps li { display: grid; grid-template-columns: 28px minmax(0, 1fr); column-gap: 22px; margin-bottom: 32px; }
-.bonus_step_label { writing-mode: vertical-rl; transform: rotate(180deg); align-self: start; color: var(--primary-color); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+/* Full search: desktop layout */
+.Search_area.full_search {
+    width: 1200px;
+    margin: 130px auto 0;
+    padding-bottom: 55px;
+    border-bottom: 1px solid var(--color-dark);
+    display: grid;
+    grid-template-columns: 400px minmax(0, 1fr);
+    column-gap: 110px;
+    align-items: start;
+    color: var(--color-light);
+}
+
+.full_search_box { padding-top: 26px; }
+.full_search h4 { font-size: 26px; font-weight: 400; line-height: 1.2; }
+.full_search_box h4 { text-transform: uppercase; margin-bottom: 14px; }
+.full_search_input_box { position: relative; display: flex; align-items: center; }
+.full_search_input_box svg { position: absolute; left: 16px; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; pointer-events: none; }
+.full_search_input_box input { width: 100%; min-height: 44px; padding: 10px 16px 10px 60px; font: inherit; font-size: 16px; color: var(--color-light); background: transparent; border: 1px solid var(--color-light); border-radius: 5px; }
+.full_search_input_box input::placeholder { color: var(--color-light); opacity: 1; }
+.full_search_box > p { margin-top: 10px; font-size: 14px; }
+.search_category_filter { padding: 26px 22px; border-radius: 5px; background: linear-gradient(110deg, #242424, var(--background-color-dark-bg)); }
+.search_category_filter h4 { margin-bottom: 22px; }
+.search_category_columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 75px; }
+.search_category_column { display: flex; flex-direction: column; gap: 12px; }
+.search_category_column label { display: flex; align-items: center; gap: 22px; cursor: pointer; font-size: 18px; }
+.search_category_column input { appearance: none; flex-shrink: 0; width: 27px; height: 27px; border: 2px solid var(--color-light); border-radius: 50%; background: transparent; cursor: pointer; }
+.search_category_column input:checked { border: 8px solid var(--primary-color); background: var(--color-light); }
+.full_search input:focus-visible { outline: 2px solid var(--primary-color); outline-offset: 4px; }
 
 /* Footer */
 .footer {
@@ -935,36 +953,7 @@ h6 {
 /* RWD start */
 
 @media (width <=768px) {
-    /* Bonus section on phones: ingredients first, then instructions. */
-    .instructions_bonus {
-        width: 90%;
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-    }
 
-    .bonus_headings, .bonus_columns {
-        display: contents;
-    }
-
-    .bonus_headings .todays_recipes_headline {
-        font-size: 28px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid var(--color-light);
-        margin-bottom: 28px;
-    }
-
-    #bonus-ingredients-heading { order: 0; }
-    .bonus_ingredients { order: 1; margin-bottom: 40px; font-size: 14px; line-height: 1.9; }
-    #bonus-steps-heading { order: 2; }
-    .bonus_steps { order: 3; font-size: 14px; line-height: 1.9; }
-
-    .bonus_steps li {
-        grid-template-columns: 22px minmax(0, 1fr);
-        column-gap: 14px;
-    }
-
-    /* Recipe page on phones */
     .recipe_page {
         width: 90%;
         grid-template-columns: minmax(0, 1fr);
