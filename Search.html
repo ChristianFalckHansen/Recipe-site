@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -26,7 +26,23 @@
                     <li><a href="About-us.html">About Us</a></li>
                 </ul>
             </div>
+
+            <button class="hamburger-menu" type="button" aria-label="Open navigation"
+                aria-controls="mobile-navigation" aria-expanded="false"><svg  xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16">
+                        <path d="M0 0h16v16H0z" fill="none" />
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="1.5" d="m2.75 12.25h10.5m-10.5-4h10.5m-10.5-4h10.5" />
+                    </svg></button>
         </nav>
+
+        <div class="mobile-menu" id="mobile-navigation">
+            <ul>
+                <li><a class="menu-item" href="index.html">Home</a></li>
+                <li><a class="menu-item" href="Recipe.html">Recipes</a></li>
+                <li><a class="menu-item" href="Search.html">Search</a></li>
+                <li><a class="menu-item" href="About-us.html">About Us</a></li>
+            </ul>
+        </div>
 
 
 
@@ -43,7 +59,7 @@
             <div class="full_search_box">
                 <h4>Full search</h4>
                 <div class="full_search_input_box">
-                    <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
+                    <svg  viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
                     <input type="search" name="search" placeholder="Search" aria-label="Search recipes">
                 </div>
                 <p>Let’s go already!</p>
@@ -63,6 +79,19 @@
                         <label><input type="radio" name="category" value="dessert"><span>Dessert</span></label>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="search_results" aria-label="Search results">
+            <div class="search_result">
+                <div class="search_result_category" data-category="seafood">Category: <span data-category="seafood">SEAFOOD</span></div>
+                <h4>Search result one</h4>
+                <p>This will be the excerpt from WordPress, and you can control several things here. Like the length of the text that is shown and multiple other things. Now i just writing stuff to fill it out, and the final three dots indicate there is more text ...</p>
+            </div>
+            <div class="search_result">
+                <div class="search_result_category" data-category="chicken">Category: <span data-category="chicken">CHICKEN</span></div>
+                <h4>Search result two</h4>
+                <p>This will be the excerpt from WordPress, and you can control several things here. Like the length of the text that is shown and multiple other things. Now i just writing stuff to fill it out, and the final three dots indicate there is more text ...</p>
             </div>
         </section>
 
@@ -101,8 +130,9 @@
 
                     <div class="footer_navigation">
                         <a href="index.html">Home</a>
-                        <a href="About-us.html">Recipe</a>
-                        <a href="#">About</a>
+                        <a href="Recipe.html">Recipe</a>
+                        <a href="Search.html">Search</a>
+                        <a href="About-us.html">About Us</a>
                     </div>
 
                     <div class="footer_information">
